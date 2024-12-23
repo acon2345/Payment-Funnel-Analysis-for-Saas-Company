@@ -15,4 +15,4 @@ Using SQL and a data science notebook to build a payment funnel analysis, I reco
 
 The finance team has recognized that many subscriptions haven't been paid which indicate a breakdown within the online payment process. For the desired conversion rate to be achieved, the product team must discover what friction points in the online payment process exist and what adjustments can be made to encourage users to successfully complete the online payment process.
 
-![image](https://github.com/user-attachments/assets/f70cb25c-7905-475e-8e1c-5c44925230cc)
+
