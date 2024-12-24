@@ -1,2 +1,8 @@
 Click the following link to see the full SQL code used for this analysis:
-https://app.hex.tech/big-sql-energy/hex/9e2b6afe-e718-49e4-826e-9ddcb1049b14/draft/logic
+<link rel="stylesheet" href="https://static.hex.site/embed/embedStyles.css" />
+<div class="hex-embed">
+  <iframe width="800" height="600" frameborder="0" src="https://app.hex.tech/big-sql-energy/app/9e2b6afe-e718-49e4-826e-9ddcb1049b14/latest?embedded=true"> </iframe>
+  <a href="https://hex.tech/?embed" target="_blank">
+    <img src="https://static.hex.site/embed/hex-logo-embed.png" alt="Hex - a modern data workspace for collaborative notebooks, data apps, dashboards, and reports."/>
+  </a>
+</div>
