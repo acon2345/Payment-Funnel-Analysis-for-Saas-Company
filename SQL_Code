@@ -1,4 +1,4 @@
---The query below determines the max status each subscription has reached
+--The query below determines the max status each subscription has reached.
 
 select
     subscription_id,
@@ -10,7 +10,7 @@ group by
 
 
 --The below SQL code creates a funnel utilizing CTEs to give descriptions for the stages that each subscription is currently at.
---This query also sums a count of how many subscriptions are currently at each stage to better understand where the obstacles lie. 
+--This query also give a total of how many subscriptions are currently at each stage to better understand where the obstacles lie. 
 
 with max_status_reached as(
 select
@@ -53,7 +53,7 @@ order by
     2 desc
 
 
---The below query givses some descriptive statistics for the data such as:
+--The below query gives some descriptive statistics for the data such as:
 --How many subscriptions completed payment,
 --How many subscriptions at least started the payment process,
 --Conversion Rate
@@ -94,7 +94,7 @@ from
     payment_funnel_stages
 
 
---Below is a query that shows what percentage of subscriptions encountered an error at any point throughout the payment process
+--Below is a query that shows what percentage of subscriptions encountered an error at any point throughout the payment process.
 
 with error_subs as(
 select
