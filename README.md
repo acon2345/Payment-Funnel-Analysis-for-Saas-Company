@@ -34,6 +34,8 @@ The finance team has recognized that many subscriptions haven't been paid which 
 
 
 ### Business Recommendations:
-* Reach out to 3rd party payment processing vendors to inquire about the errors on their side and determine a plan to reduce those in the future
+* Reach out to 3rd party payment processing vendors to inquire about the errors on their side and determine a plan to reduce those in the future.
+* Due to a significant number of subscriptions not making it to at least the payment portal stage, work with the Product Manager to devise a plan on how to resolve this. Possibly have payment reminders or customer service agents reaching out to encourage payment.
+* To help reduce user error due to incorrect payment info being entered, consider providing options such as Google Pay, Apple Pay, or other methods that don't require the user to enter the credit card manually each time.
 
 ## Next Steps:
