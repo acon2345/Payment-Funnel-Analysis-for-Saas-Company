@@ -1,0 +1,113 @@
+--The query below determines the max status each subscription has reached
+
+select
+    subscription_id,
+    max(status_id) as max_status
+from
+    public.payment_status_log
+group by
+    1
+
+
+--The below SQL code creates a funnel utilizing CTEs to give descriptions for the stages that each subscription is currently at.
+--This query also sums a count of how many subscriptions are currently at each stage to better understand where the obstacles lie. 
+
+with max_status_reached as(
+select
+    subscription_id,
+    max(status_id) as max_status
+from
+    public.payment_status_log
+group by
+    1
+)
+,
+payment_funnel_stages as(
+select
+    subs.subscription_id,
+    current_payment_status,
+    max_status,
+    case when max_status = 1 then 'Payment Widget Opened'
+        when max_status = 2 then 'Payment Entered'
+        when max_status = 3 and current_payment_status = 0 then 'User Error with Payment Submission'
+        when max_status = 3 and current_payment_status != 0 then 'Payment Submitted'
+        when max_status = 4 and current_payment_status = 0 then 'Payment Processing Error with Vendor'
+        when max_status = 4 and current_payment_status != 0 then 'Payment Success with Vendor'
+        when max_status = 5 then 'Complete'
+        when max_status is null then 'User did not start payment process'
+        end as payment_funnel_stage
+from
+    public.subscriptions subs
+left join
+    max_status_reached msr
+    on subs.subscription_id = msr.subscription_id
+)
+select
+    payment_funnel_stage,
+    count(*) as num_subs
+from
+    payment_funnel_stages
+group by
+    1
+order by
+    2 desc
+
+
+--The below query givses some descriptive statistics for the data such as:
+--How many subscriptions completed payment,
+--How many subscriptions at least started the payment process,
+--Conversion Rate
+--Workflow Completion Rate
+
+
+with max_status_reached as(
+select
+    subscription_id,
+    max(status_id) as max_status
+from
+    public.payment_status_log
+group by
+    1
+)
+,
+payment_funnel_stages as(
+select
+    subs.subscription_id,
+    date_trunc('year', order_date) as order_year,
+    current_payment_status,
+    max_status,
+    case when max_status = 5 then 1 else 0 end as completed_payment,
+    case when max_status is not null then 1 else 0 end as started_payment
+from
+    public.subscriptions subs
+left join
+    max_status_reached msr
+    on subs.subscription_id = msr.subscription_id
+)
+select
+    sum(completed_payment) as num_subs_completed_payment,
+    sum(started_payment) as num_subs_started_payment,
+    count(*) as total_subs,
+    round(num_subs_completed_payment / total_subs * 100,1) as conversion_rate,
+    round(num_subs_completed_payment / num_subs_started_payment * 100,1) as workflow_completion_rate
+from
+    payment_funnel_stages
+
+
+--Below is a query that shows what percentage of subscriptions encountered an error at any point throughout the payment process
+
+with error_subs as(
+select
+    distinct subscription_id
+from
+    public.payment_status_log
+where
+    status_id = 0
+)
+select
+    round(count(err.subscription_id) * 100 / count(subs.subscription_id),1) as perc_subs_hit_error
+from
+    public.subscriptions subs
+left join
+    error_subs err
+    on subs.subscription_id = err.subscription_id
