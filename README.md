@@ -34,6 +34,6 @@ The finance team has recognized that many subscriptions haven't been paid which 
 
 
 ### Business Recommendations:
-
+* Reach out to 3rd party payment processing vendors to inquire about the errors on their side and determine a plan to reduce those in the future
 
 ## Next Steps:
