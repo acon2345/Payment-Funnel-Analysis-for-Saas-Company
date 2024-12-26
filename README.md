@@ -31,6 +31,7 @@ The finance team has recognized that many subscriptions haven't been paid which 
 ## Results & Business Recommendations
 
 ### Results:
+![image](https://github.com/user-attachments/assets/66d31c1c-caba-4ae9-9a03-9835bab27112)
 
 
 ### Business Recommendations:
