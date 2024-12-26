@@ -1,4 +1,4 @@
-# Payment-Funnel-Analysis-for-Saas-Company
+# Payment Funnel Analysis for Saas Company
 
 ## Executive Summary:
 
@@ -15,7 +15,7 @@ Using SQL and a data science notebook to build a payment funnel analysis, I reco
 
 The finance team has recognized that many subscriptions haven't been paid which indicate a breakdown within the online payment process. For the desired conversion rate to be achieved, the product team must discover what friction points in the online payment process exist and what adjustments can be made to encourage users to successfully complete the online payment process.
 
-## Methedology:
+## Methodology:
 * EDA
 * Product Funnel Analysis
 * Data Visualization
