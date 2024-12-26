@@ -11,8 +11,29 @@ Using SQL and a data science notebook to build a payment funnel analysis, I reco
 3.
 
 
-### Business Problem:
+## Business Problem:
 
 The finance team has recognized that many subscriptions haven't been paid which indicate a breakdown within the online payment process. For the desired conversion rate to be achieved, the product team must discover what friction points in the online payment process exist and what adjustments can be made to encourage users to successfully complete the online payment process.
 
+## Methedology:
+* EDA
+* Product Funnel Analysis
+* Data Visualization
 
+## Skills:
+* SQL
+  * CTEs, Case, Subqueries, Window Functions
+* Data Visualization
+* Data Wrangling
+* Data Science Notebook
+* Snowflake Data Warehouse
+
+## Results & Business Recommendations
+
+### Results:
+
+
+### Business Recommendations:
+
+
+## Next Steps:
