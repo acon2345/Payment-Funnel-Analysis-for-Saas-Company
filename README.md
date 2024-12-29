@@ -25,6 +25,7 @@ The finance team has recognized that many subscriptions haven't been paid which 
 * SQL
   * CTEs, Case, Subqueries, Window Functions
 * Data Visualization
+  * Tableau
 * Data Wrangling
 * Data Science Notebook
 * Snowflake Data Warehouse
