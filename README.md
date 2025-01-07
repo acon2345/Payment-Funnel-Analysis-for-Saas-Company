@@ -6,7 +6,7 @@ The company has recognized that a significant number of subscriptions remain unp
 This analysis examines and identifies pain points within the online payment process and supply actionable recommendations to improve the converstion rate of successful payments.
 Using SQL and a data science notebook to build a payment funnel analysis, I recommend the following be implemented to achieve the desired conversion rate:
 
-1. 3rd party collaboration to indentify and devise a plan to resolve pain points
+1. Collaboration with the Payment Processing Vendor to indentify and devise a plan to resolve pain points
 2. Reminder emails/texts/notifications to complete payment process
 3. Utilizing technology to combat user error in payment method process
 
